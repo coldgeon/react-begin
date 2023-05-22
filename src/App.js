@@ -14,14 +14,14 @@ import TodoList from './Todo';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path="/coldgeon" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="/movie" element={<MovieApp />} />
       <Route path="/movie/:id" element={<Detail />} />
       <Route path="/cointracker" element={<CoinTracker />}></Route>
       <Route path="/todolist" element={<TodoList />}></Route>
     </Route>
-  )
-  // { basename: process.env.PUBLIC_URL }
+  ),
+  { basename: process.env.PUBLIC_URL }
 );
 
 function App() {
