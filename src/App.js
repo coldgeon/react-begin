@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import Home from './routes/Home';
-import Detail from './routes/Detail';
+import Detail from './components/Detail';
 import MovieApp from './components/MovieApp';
 import CoinTracker from './CoinTracker';
 import TodoList from './Todo';
@@ -20,8 +20,8 @@ const router = createBrowserRouter(
       <Route path="/cointracker" element={<CoinTracker />}></Route>
       <Route path="/todolist" element={<TodoList />}></Route>
     </Route>
-  ),
-  { basename: process.env.PUBLIC_URL }
+  )
+  // { basename: process.env.PUBLIC_URL }
 );
 
 function App() {

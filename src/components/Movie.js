@@ -1,14 +1,16 @@
 import ProPtypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import styles from '../styles/Movie.module.css';
 
 function Movie({ id, title, genres, coverImage, summary }) {
   return (
-    <div>
-      <h2>
-        <Link to={`/movie/${id}`}>{title}</Link>
-      </h2>
+    <div className={styles.movieItem}>
+      <h3 className={styles.movieTitle}>
+        {/* <Link to={`/movie/${id}`}>{title}</Link> */}
+        {title}
+      </h3>
 
-      <img src={coverImage} alt={title} />
+      <img className={styles.movieImg} src={coverImage} alt={title} />
     </div>
   );
 }

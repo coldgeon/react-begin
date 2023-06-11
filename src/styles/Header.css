@@ -1,0 +1,17 @@
+.home {
+  padding: 20px;
+}
+
+.headerBox {
+  padding: 20px;
+}
+
+.headerBox h1 {
+  color: green;
+  margin: 0;
+}
+
+.headerBox h1 a {
+  text-decoration: none;
+  color: green;
+}

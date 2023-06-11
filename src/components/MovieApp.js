@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import Movie from './Movie';
 import { Link } from 'react-router-dom';
+import styles from '../styles/Movie.module.css';
+import '../styles/Header.css';
 
 function MovieApp() {
   const [loading, setLoading] = useState(true);
@@ -20,21 +22,29 @@ function MovieApp() {
   }, []);
   return (
     <div>
-      {loading ? (
-        <h1>Loading...</h1>
-      ) : (
-        <div>
+      <div class="headerBox">
+        <h1>
           <Link to="/">Home</Link>
-          {movies.map((movie) => (
-            <Movie
-              id={movie.id}
-              key={movie.id}
-              coverImage={movie.medium_cover_image}
-              title={movie.title}
-              genres={movie.genres}
-              summary={movie.summary}
-            />
-          ))}
+        </h1>
+      </div>
+      {loading ? (
+        <div class="headerBox">
+          <h1>Loading...</h1>
+        </div>
+      ) : (
+        <div className={styles.movieBox}>
+          <div className={styles.movieContainer}>
+            {movies.map((movie) => (
+              <Movie
+                id={movie.id}
+                key={movie.id}
+                coverImage={movie.medium_cover_image}
+                title={movie.title}
+                genres={movie.genres}
+                summary={movie.summary}
+              />
+            ))}
+          </div>
         </div>
       )}
     </div>
